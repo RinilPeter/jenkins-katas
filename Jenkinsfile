@@ -5,22 +5,9 @@ pipeline {
       parallel {
         stage('Say hello') {
           steps {
-            sh 'echo "hello world"'
+            sh 'echo " Hi hello world"'
           }
         }
-
-        stage('build app') {
-          agent {
-            docker {
-              image 'gradle:jdk11'
-            }
-
-          }
-          steps {
-            sh 'ci/build-app.sh'
-          }
-        }
-
       }
     }
 
